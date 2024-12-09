@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rush Expedited Courier</title>
+    <link rel="stylesheet" href="/static/css/contact.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+
+    /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #2a2a2a;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+  
+  /* Navigation Styles */
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #ad0101;
+  }
+  
+  .contact-btn .btn {
+    background-color: #ad0101;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-btn .btn:hover {
+    background-color: #8b0000;
+  }
+  
+  /* Contact Section Styles */
+  .contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .contact-details {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .contact-details h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .detail {
+    margin-bottom: 15px;
+  }
+  
+  .detail p {
+    margin: 5px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Form Container Styles */
+  .container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Styles */
+  .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+  
+  .captcha {
+    display: flex;
+    align-items: center;
+  }
+  
+  .captcha input {
+    margin-right: 10px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f04e23;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #d03e1c;
+  }
+  
+  /* Map Section Styles */
+  .map-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .map-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-column h3 {
+    color: #f47c48;
+    margin-bottom: 15px;
+  }
+  
+  .footer-column p,
+  .footer-column a {
+    color: #bfbfbf;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer-column a {
+    text-decoration: none;
+  }
+  
+  .footer-column a:hover {
+    color: #f47c48;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    color: white;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Hamburger Menu Styles */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    transition: 0.4s;
+  }
+  
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    /* Header/Navigation */
+    .hamburger {
+      display: flex;
+    }
+  
+    .mobile-nav {
+      display: none;
+      width: 90%;
+      position: absolute;
+      top: 70px;
+      left: auto;
+      background-color: #2a2a2a;
+      padding: 20px;
+      flex-direction: column;
+    }
+  
+    .mobile-nav.active {
+      display: flex;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+    nav ul li a {
+      font-size: 1.2rem;
+    }
+  
+    .contact-btn {
+      display: none;
+    }
+  
+    /* Contact Section */
+    .contact-section {
+      flex-direction: column;
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    .contact-details {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+  
+    /* Form */
+    .container {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .form-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    /* Footer */
+    .footer-container {
+      flex-direction: column;
+    }
+  
+    .footer-column {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  
+    /* Typography */
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    p, .detail p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-details {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact-details h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.detail {
+    margin-bottom: 15px;
+}
+
+.detail p {
+    margin: 5px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.enquiry-form {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+.captcha {
+    display: flex;
+    align-items: center;
+}
+
+.captcha input {
+    margin-right: 10px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f04e23;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #d03e1c;
+}
+
+.map-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.map-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+
+</style>
+<body>
+     <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="/static/images/logo.png" alt="REC Logo">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-nav">
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./Services.html">Services</a></li>
+                        <li><a href="./Track & Trace.html">Track & Trace</a></li>
+                        <li><a href="./Blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="contact-btn">
+                <a href="./Contact.html" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="contact-section">
+        <div class="contact-details">
+            <h1>Contact</h1>
+            <div class="detail">
+                <p><strong>Office Address:</strong></p>
+                <p>2225 Hymus Blvd, Dorval, Quebec, H9P 1J8</p>
+            </div>
+            <div class="detail">
+                <p><strong>Phone Number:</strong></p>
+                <p>+1 (888) 555-6789</p>
+            </div>
+            <div class="detail">
+                <p><strong>Fax No:</strong></p>
+                <p>+1 (888) 465-3942</p>
+            </div>
+            <div class="detail">
+                <p><strong>Email Address:</strong></p>
+                <p>info@re-courier.com</p>
+            </div>
+        </div>
+        <div class="contact-image">
+            <img src="/static/images/office.jpg" alt="Office Image">
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Submit Enquiry</h1>
+        <form action="/submit" method="POST">
+            <div class="form-row">
+                <input type="text" placeholder="Fullname" name="fullname" required>
+                <input type="tel" placeholder="Phone number" name="phone" required>
+                <input type="email" placeholder="Email address" name="email" required>
+            </div>
+            <div class="form-row">
+                <input type="text" placeholder="Company Name" name="company">
+                <input type="text" placeholder="Job Title" name="job">
+                <input type="text" placeholder="City/Country" name="city">
+            </div>
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            <div class="form-row">
+                <div class="captcha">
+                    <input type="checkbox" id="not-robot">
+                    <label for="not-robot">I'm not a robot</label>
+                </div>
+            </div>
+            <button type="submit" class="submit-button">MAKE A REQUEST</button>
+        </form>
+        <div class="map-section">
+            <h2>Find Us</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.4398341758794!2d-73.73597518418843!3d45.4753761791014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9395f97c1005f%3A0x48a41e48d29da755!2s2225%20Hymus%20Blvd%2C%20Dorval%2C%20QC%20H9P%201J8%2C%20Canada!5e0!3m2!1sen!2sin!4v1691167721255!5m2!1sen!2sin"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Rush Expedited Courier is dedicated to offering tailored, expert services to our valued clients. As a top provider of specialized courier solutions, we take pride in addressing the unique needs of diverse industries.</p>
+                <p><b>Address: 2225 Hymus Blvd, Dorval, Quebec, H9P 1J8</b></p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./Contact.html">Contact</a></li>
+                    <li><a href="./terms.html">Terms & Conditions</a></li>
+                    <li><a href="./Privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="./medical.html">Medical Courier</a></li>
+                    <li><a href="./legal.html">Legal Courier</a></li>
+                    <li><a href="./aircraft.html">Aircraft Parts Courier</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Get In Touch</h3>
+                <p><strong>Call us:</strong> <a href="tel:+18668867874">+1 (866) 886-RUSH (7874)</a></p>
+                <p><strong>Office Hours:</strong> Available 24/7</p>
+                <p><strong>Send Us an Email:</strong> <a href="mailto:info@re-courier.com">info@re-courier.com</a></p>
+                <p><strong>Fax:</strong> <a href="tel:+18884933942">+1 (888) 493-3942</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rush Expedited Courier. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
